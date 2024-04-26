@@ -1,0 +1,135 @@
+[gd_scene load_steps=10 format=3 uid="uid://ceurhaevcdxd3"]
+
+[ext_resource type="Script" path="res://scripts/script_1.gd" id="1_h2q3u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnk7i"]
+size = Vector2(87, 322)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpcle"]
+size = Vector2(2347, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf07u"]
+size = Vector2(2347, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5eqk3"]
+size = Vector2(2335, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mkn2"]
+size = Vector2(2335, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0i3ap"]
+size = Vector2(98, 1634)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0m2h"]
+size = Vector2(98, 1634)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xmsm"]
+size = Vector2(80, 80)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_h2q3u")
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["p1"]]
+unique_name_in_owner = true
+position = Vector2(-1114, 22)
+
+[node name="ColorRect" type="ColorRect" parent="Player"]
+offset_left = -44.0
+offset_top = -160.0
+offset_right = 42.0
+offset_bottom = 161.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_jnk7i")
+
+[node name="Player2" type="CharacterBody2D" parent="." groups=["p2"]]
+unique_name_in_owner = true
+position = Vector2(1114, 22)
+
+[node name="ColorRect" type="ColorRect" parent="Player2"]
+offset_left = -44.0
+offset_top = -160.0
+offset_right = 42.0
+offset_bottom = 161.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_jnk7i")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.545, 0.495)
+
+[node name="Borders" type="StaticBody2D" parent="." groups=["border"]]
+unique_name_in_owner = true
+
+[node name="YBorderBallUp" type="StaticBody2D" parent="Borders" groups=["borderUP"]]
+unique_name_in_owner = true
+position = Vector2(0, -30)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/YBorderBallUp"]
+position = Vector2(-1, -688)
+shape = SubResource("RectangleShape2D_bpcle")
+
+[node name="YBorderBallDown" type="StaticBody2D" parent="Borders" groups=["borderDOWN"]]
+unique_name_in_owner = true
+position = Vector2(0, 15)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/YBorderBallDown"]
+position = Vector2(-1, 719.5)
+shape = SubResource("RectangleShape2D_qf07u")
+
+[node name="BorderLine" type="Node2D" parent="Borders"]
+
+[node name="ColorRect" type="ColorRect" parent="Borders/BorderLine"]
+offset_left = -19.0
+offset_top = -794.0
+offset_right = 21.0
+offset_bottom = 817.0
+color = Color(0.447059, 0.447059, 0.447059, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
+position = Vector2(0, 776)
+shape = SubResource("RectangleShape2D_5eqk3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders"]
+position = Vector2(-8, -769)
+shape = SubResource("RectangleShape2D_3mkn2")
+
+[node name="BallBorderP1" type="StaticBody2D" parent="Borders"]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/BallBorderP1"]
+position = Vector2(-1251, 8)
+shape = SubResource("RectangleShape2D_0i3ap")
+
+[node name="BallBorderP2" type="StaticBody2D" parent="Borders"]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/BallBorderP2"]
+position = Vector2(1251, 8)
+shape = SubResource("RectangleShape2D_e0m2h")
+
+[node name="BallPos" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Ball" type="Area2D" parent="BallPos"]
+unique_name_in_owner = true
+collision_layer = 3
+collision_mask = 3
+
+[node name="ColorRect" type="ColorRect" parent="BallPos/Ball"]
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BallPos/Ball"]
+shape = SubResource("RectangleShape2D_2xmsm")

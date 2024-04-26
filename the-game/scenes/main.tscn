@@ -1,0 +1,786 @@
+[gd_scene load_steps=21 format=3 uid="uid://ceurhaevcdxd3"]
+
+[ext_resource type="Script" path="res://scripts/script_1.gd" id="1_h2q3u"]
+[ext_resource type="FontFile" uid="uid://c4g1ac32uk2bb" path="res://fonts/Volter__28Goldfish_29.ttf" id="2_xtj5t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6fpk"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 20
+border_width_top = 15
+border_width_right = 20
+border_width_bottom = 15
+border_color = Color(0.447059, 0.447059, 0.447059, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Theme" id="Theme_8vk24"]
+Panel/styles/panel = SubResource("StyleBoxFlat_a6fpk")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5c5jj"]
+bg_color = Color(0, 0, 0, 0.815686)
+border_width_left = 20
+border_width_top = 15
+border_width_right = 20
+border_width_bottom = 15
+border_color = Color(0.65098, 0.65098, 0.65098, 1)
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfre3"]
+bg_color = Color(0, 0, 0, 0.815686)
+border_width_left = 20
+border_width_top = 15
+border_width_right = 20
+border_width_bottom = 15
+border_color = Color(0.580392, 0.580392, 0.580392, 1)
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhl27"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 20
+border_width_top = 15
+border_width_right = 20
+border_width_bottom = 15
+border_color = Color(0.282353, 0.282353, 0.282353, 1)
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0812y"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 20
+border_width_top = 15
+border_width_right = 20
+border_width_bottom = 15
+border_color = Color(0.282353, 0.282353, 0.282353, 1)
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="Theme" id="Theme_asf35"]
+Button/styles/focus = SubResource("StyleBoxFlat_5c5jj")
+Button/styles/hover = SubResource("StyleBoxFlat_pfre3")
+Button/styles/normal = SubResource("StyleBoxFlat_fhl27")
+Button/styles/pressed = SubResource("StyleBoxFlat_0812y")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnk7i"]
+size = Vector2(87, 322)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0i3ap"]
+size = Vector2(98, 1852)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fxt3"]
+size = Vector2(1156, 230)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0m2h"]
+size = Vector2(98, 1832)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brrn0"]
+size = Vector2(1156, 230)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sksmi"]
+size = Vector2(1194, 230)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xmsm"]
+size = Vector2(80, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpcle"]
+size = Vector2(2347, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qf07u"]
+size = Vector2(2301, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5eqk3"]
+size = Vector2(2348.5, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mkn2"]
+size = Vector2(2348.5, 78.5)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_h2q3u")
+metadata/test = 0.0
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreUI" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="P1Score" type="Panel" parent="UI/ScoreUI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -464.0
+offset_top = -724.0
+offset_right = -28.0
+offset_bottom = -317.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = SubResource("Theme_8vk24")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ScoreUI/P1Score"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -218.0
+offset_top = -256.5
+offset_right = 218.0
+offset_bottom = 203.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="P1ScoreText" type="Label" parent="UI/ScoreUI/P1Score/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xtj5t")
+theme_override_font_sizes/font_size = 72
+text = "
+P1"
+
+[node name="P1ScoreTextNum" type="Label" parent="UI/ScoreUI/P1Score/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_colors/font_color = Color(0.788235, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xtj5t")
+theme_override_font_sizes/font_size = 72
+text = "0
+"
+
+[node name="P2Score" type="Panel" parent="UI/ScoreUI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -724.0
+offset_right = 468.0
+offset_bottom = -317.0
+grow_vertical = 0
+theme = SubResource("Theme_8vk24")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ScoreUI/P2Score"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -256.5
+offset_right = 436.0
+offset_bottom = 203.5
+grow_vertical = 2
+alignment = 1
+
+[node name="P2ScoreText" type="Label" parent="UI/ScoreUI/P2Score/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_colors/font_color = Color(0, 0.321569, 1, 1)
+theme_override_fonts/font = ExtResource("2_xtj5t")
+theme_override_font_sizes/font_size = 72
+text = "
+P2"
+
+[node name="P2ScoreTextNum" type="Label" parent="UI/ScoreUI/P2Score/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_colors/font_color = Color(0, 0.435294, 0.788235, 1)
+theme_override_fonts/font = ExtResource("2_xtj5t")
+theme_override_font_sizes/font_size = 72
+text = "0
+"
+
+[node name="BorderLine" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -794.0
+offset_right = 13.0
+offset_bottom = 817.0
+color = Color(0.447059, 0.447059, 0.447059, 1)
+
+[node name="RestartButton" type="Button" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1164.0
+offset_top = -709.0
+offset_right = -750.0
+offset_bottom = -539.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_asf35")
+theme_override_colors/font_color = Color(0.611765, 0.611765, 0.611765, 1)
+theme_override_fonts/font = ExtResource("2_xtj5t")
+theme_override_font_sizes/font_size = 64
+text = "RESTART"
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["p1"]]
+unique_name_in_owner = true
+position = Vector2(-1114, 22)
+
+[node name="ColorRect" type="ColorRect" parent="Player"]
+offset_left = -44.0
+offset_top = -160.0
+offset_right = 42.0
+offset_bottom = 161.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_jnk7i")
+
+[node name="Player2" type="CharacterBody2D" parent="." groups=["p2"]]
+unique_name_in_owner = true
+position = Vector2(1114, 22)
+
+[node name="ColorRect" type="ColorRect" parent="Player2"]
+offset_left = -44.0
+offset_top = -160.0
+offset_right = 42.0
+offset_bottom = 161.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_jnk7i")
+
+[node name="BallBorderP1" type="StaticBody2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BallBorderP1"]
+position = Vector2(-1257, -3)
+shape = SubResource("RectangleShape2D_0i3ap")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BallBorderP1"]
+position = Vector2(-663, -920)
+shape = SubResource("RectangleShape2D_2fxt3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="BallBorderP1"]
+position = Vector2(-686, 938)
+shape = SubResource("RectangleShape2D_2fxt3")
+
+[node name="BallBorderP2" type="StaticBody2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BallBorderP2"]
+position = Vector2(1251, 11)
+shape = SubResource("RectangleShape2D_e0m2h")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BallBorderP2"]
+position = Vector2(651, -930)
+shape = SubResource("RectangleShape2D_brrn0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="BallBorderP2"]
+position = Vector2(647, 928)
+shape = SubResource("RectangleShape2D_sksmi")
+
+[node name="BallPos" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Ball" type="Area2D" parent="BallPos"]
+unique_name_in_owner = true
+collision_layer = 3
+collision_mask = 3
+
+[node name="ColorRect" type="ColorRect" parent="BallPos/Ball"]
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BallPos/Ball"]
+shape = SubResource("RectangleShape2D_2xmsm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.545, 0.495)
+
+[node name="StartMenuUI" type="Panel" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1212.0
+offset_top = -828.0
+offset_right = 1212.0
+offset_bottom = 804.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="StartMenuUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -234.0
+offset_top = -650.0
+offset_right = 180.0
+offset_bottom = -480.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_asf35")
+theme_override_colors/font_color = Color(0.611765, 0.611765, 0.611765, 1)
+theme_override_fonts/font = ExtResource("2_xtj5t")
+theme_override_font_sizes/font_size = 64
+text = "START"
+
+[node name="CodeButton" type="Button" parent="StartMenuUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -233.0
+offset_top = -415.0
+offset_right = 181.0
+offset_bottom = -245.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_asf35")
+theme_override_colors/font_color = Color(0.611765, 0.611765, 0.611765, 1)
+theme_override_fonts/font = ExtResource("2_xtj5t")
+theme_override_font_sizes/font_size = 64
+text = "SOURCE CODE"
+
+[node name="StartMenuText" type="Label" parent="StartMenuUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -471.0
+offset_top = 111.0
+offset_right = 470.0
+offset_bottom = 521.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.788235, 0.788235, 0.788235, 1)
+theme_override_fonts/font = ExtResource("2_xtj5t")
+theme_override_font_sizes/font_size = 64
+text = "PONG IN A DICT
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CodeWindow" type="Window" parent="StartMenuUI"]
+unique_name_in_owner = true
+mode = 2
+title = "THE CODE"
+initial_position = 1
+size = Vector2i(640, 360)
+visible = false
+content_scale_mode = 1
+content_scale_aspect = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="StartMenuUI/CodeWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 2
+
+[node name="Label" type="Label" parent="StartMenuUI/CodeWindow/ScrollContainer"]
+layout_mode = 2
+text = "extends Node2D
+
+#the entire code is in a dictionary lol
+@onready var code_data := {
+#region Variables
+	#Button that starts the game
+	start_menu_ui = %StartMenuUI,
+	start_button = %StartButton,
+	restart_button = %RestartButton,
+	is_restarted = false,
+	
+	code_button = %CodeButton,
+	code_window = %CodeWindow,
+	
+	#Audio
+	audio = %Audio,
+	paddle_hit = preload(\"res://sfx/paddle_hit.ogg\"), 
+	
+	#Gets A Reference To The Player Variable
+	player = %Player,
+	player2 = %Player2,
+	player_vars = {
+		#Handles All Player Related Variables
+		player_speed = 530,
+		player_original_speed = 530,
+		player_max_speed = 700,
+		
+		player1_score = 0,
+		player2_score = 0,
+		player1_score_ui = %P1ScoreTextNum,
+		player2_score_ui = %P2ScoreTextNum,
+		
+		ball_rng_min_p1 = 0,
+		ball_rng_min_p2 = 0,
+		ball_rng_middle_p1 = 1,
+		ball_rng_middle_p2 = 1,
+		ball_rng_max_p1 = 2, 
+		ball_rng_max_p2 = 2, 
+	},
+	
+	#Gets A Reference To The Ball Variable
+	ball = %BallPos/Ball,
+	ball_pos = %BallPos,
+	ballYborderUP = %Borders/YBorderBallUp,
+	ballYborderDOWN = %Borders/YBorderBallDown,
+	borderkillLeft = %BallBorderP1,
+	borderkillRight = %BallBorderP2, 
+	#Ball Speed Vars
+	ball_speed_x = 520,
+	ball_speed_y = 300,
+	ball_speed_x_max = 1000,
+	ball_speed_y_max = 500,
+	ball_original_speed_x = 520,
+	ball_original_speed_y = 300,
+	
+	#Ball Check Stuff
+	ball_check = 0,
+	ball_rng = RandomNumberGenerator.new(),
+	ball_rng_min = 0,
+	ball_rng_max = 3,
+		
+	#Enums Don't Work In A Dictionary, But Since Their Similar To One We Just Mimic It.
+	BALL_DIR = {
+		LEFT = 0,
+		RIGHT = 1,
+		LEFTDOWN = 2,
+		RIGHTDOWN = 3,
+		LEFTMIDDLE = 4,
+		RIGHTMIDDLE = 5,
+		UP = 6,
+		DOWN = 7,
+	},
+	
+#endregion
+	
+#region Functions
+	std = {
+		
+		#Calls All Standard Functions
+		FunctionCall = func() -> void:
+			#connecting a button press to game start
+			code_data.start_button.pressed.connect(func() -> void: 
+				code_data.start_menu_ui.hide()
+				code_data.code_window.hide()
+				code_data.std.Start.call() 
+				code_data.std.FixedUpdate.call()
+			)
+			code_data.restart_button.pressed.connect(func() -> void:
+				code_data.is_restarted = true
+				get_tree().reload_current_scene()
+			)
+			code_data.code_button.pressed.connect(func() -> void:
+				code_data.code_window.show()
+			)
+			code_data.code_window.close_requested.connect(func() -> void:
+				code_data.code_window.hide()
+			)
+			const grab_focus_delay := 0.5
+			
+			await get_tree().create_timer(grab_focus_delay).timeout
+			code_data.start_button.grab_focus()
+			pass,
+		
+		#Runs Once
+		Start = func() -> void:
+			code_data.ball.body_entered.connect(code_data.ball_functions.BallCollision)
+			code_data.ball_functions.BallRandomPos.call()
+			pass,
+			
+		#Runs Every Physics Frame
+		FixedUpdate = func(delta := get_physics_process_delta_time()) -> void:
+			while code_data.is_restarted == false:
+				if code_data.is_restarted == true:
+					break
+				
+				await get_tree().physics_frame
+				#Movement Calls
+				code_data.PlayerMovement.call()
+				
+				#Checks What Direction The Ball Should Head To
+				code_data.ball_functions.BallMatch.call()
+			pass,
+	},
+	
+	game_functions = {
+		AddSpeed = func(speed_amount) -> void:
+			if code_data.ball_speed_x <= code_data.ball_speed_x_max:
+				code_data.ball_speed_x += speed_amount
+			if code_data.ball_speed_y <= code_data.ball_speed_y_max:
+				code_data.ball_speed_y += randf_range(speed_amount, speed_amount + speed_amount)
+			if code_data.ball_speed_x > code_data.ball_speed_x_max or code_data.ball_speed_y > \\
+			code_data.ball_speed_y_max:
+				code_data.ball_speed_x = code_data.ball_speed_x_max
+				code_data.ball_speed_y = code_data.ball_speed_y_max
+				return
+			
+			if code_data.player_vars.player_speed <= code_data.player_vars.player_max_speed:
+				code_data.player_vars.player_speed += speed_amount
+			else:
+				code_data.player_vars.player_speed = code_data.player_vars.player_max_speed
+			pass,
+		
+		AddScoreP1 = func(score_amount) -> void:
+			code_data.player_vars.player1_score += score_amount
+			code_data.player_vars.player1_score_ui.text = str(code_data.player_vars.player1_score)
+			pass,
+		AddScoreP2 = func(score_amount) -> void:
+			code_data.player_vars.player2_score += score_amount
+			code_data.player_vars.player2_score_ui.text = str(code_data.player_vars.player2_score)
+			pass,
+		
+		BallResetP1 = func() -> void:
+			var ball_reset_delay := 2.0
+			code_data.game_functions.AddScoreP2.call(1)
+			code_data.ball.hide()
+			
+			await get_tree().create_timer(ball_reset_delay).timeout
+			code_data.ball.show()
+			code_data.ball.position = code_data.ball_pos.position
+			code_data.ball_speed_x = code_data.ball_original_speed_x
+			code_data.ball_speed_y = code_data.ball_original_speed_y
+			code_data.player_vars.player_speed = code_data.player_vars.player_original_speed 
+			code_data.ball_functions.BallRandomPos.call()
+			pass,
+			
+		BallResetP2 = func() -> void:
+			var ball_reset_delay := 2.0
+			code_data.game_functions.AddScoreP1.call(1)
+			code_data.ball.hide()
+			
+			await get_tree().create_timer(ball_reset_delay).timeout
+			code_data.ball.show()
+			code_data.ball.position = code_data.ball_pos.position
+			code_data.ball_speed_x = code_data.ball_original_speed_x
+			code_data.ball_speed_y = code_data.ball_original_speed_y
+			code_data.player_vars.player_speed = code_data.player_vars.player_original_speed 
+			code_data.ball_functions.BallRandomPos.call()
+			pass,
+	},
+	
+	#Handles The Movement
+	PlayerMovement = func() -> void:
+		code_data.player.velocity.y = Input.get_axis(\"up\", \"down\") * code_data.player_vars.player_speed
+		code_data.player.move_and_slide()
+		
+		code_data.player2.velocity.y = Input.get_axis(\"up2\", \"down2\") * code_data.player_vars.player_speed
+		code_data.player2.move_and_slide()
+		pass,
+		
+	ball_functions = {
+		BallCollision = func(body: Node2D) -> void:
+			#Checks What Body Is Colliding With
+			match body.name:
+				code_data.ballYborderUP.name:
+					code_data.ball_functions.BallRandomHitDown.call()
+					code_data.ball_functions.PaddleHitSound.call()
+				code_data.ballYborderDOWN.name:
+					code_data.ball_functions.BallRandomHitUp.call()
+					code_data.ball_functions.PaddleHitSound.call()
+				code_data.player.name:
+					code_data.ball_functions.BallRandomHitRight.call()
+					code_data.ball_functions.PaddleHitSound.call()
+				code_data.player2.name:
+					code_data.ball_functions.BallRandomHitLeft.call()
+					code_data.ball_functions.PaddleHitSound.call()
+				code_data.borderkillLeft.name:
+					code_data.game_functions.BallResetP1.call()
+					code_data.ball_functions.PaddleHitSound.call()
+				code_data.borderkillRight.name:
+					code_data.game_functions.BallResetP2.call()
+					code_data.ball_functions.PaddleHitSound.call()
+					
+			code_data.game_functions.AddSpeed.call(6.5)
+			pass,
+			
+		BallMatch = func() -> void:
+			match code_data.ball_check:
+				code_data.BALL_DIR.LEFT:
+					code_data.ball_functions.MoveUpperLeft.call()
+				code_data.BALL_DIR.RIGHT:
+					code_data.ball_functions.MoveUpperRight.call()
+				code_data.BALL_DIR.LEFTDOWN:
+					code_data.ball_functions.MoveLowerLeft.call()
+				code_data.BALL_DIR.RIGHTDOWN:
+					code_data.ball_functions.MoveLowerRight.call()
+				code_data.BALL_DIR.LEFTMIDDLE:
+					code_data.ball_functions.MoveMiddleLeft.call()
+				code_data.BALL_DIR.RIGHTMIDDLE:
+					code_data.ball_functions.MoveMiddleRight.call()
+				code_data.BALL_DIR.UP:
+					code_data.ball_functions.MoveDown.call()
+				code_data.BALL_DIR.DOWN:
+					code_data.ball_functions.MoveUp.call()
+			pass,
+			
+		BallRandomPos = func() -> void:
+			code_data.ball_check = randi_range(code_data.ball_rng_min, code_data.ball_rng_max)
+			pass,
+		
+		PaddleHitSound = func() -> void:
+			code_data.audio.stream = code_data.paddle_hit
+			code_data.audio.play()
+			pass,
+		
+		BallRandomHitLeft = func() -> void:
+			var left_rng := RandomNumberGenerator.new()
+			var left_rng_num := left_rng.randi_range(code_data.player_vars.ball_rng_min_p2, code_data.player_vars.ball_rng_max_p2)
+			if left_rng_num == code_data.player_vars.ball_rng_min_p2:
+				code_data.ball_check = code_data.BALL_DIR.LEFT
+			
+			if left_rng_num == code_data.player_vars.ball_rng_middle_p2:
+				code_data.ball_check = code_data.BALL_DIR.LEFTMIDDLE
+			
+			if left_rng_num == code_data.player_vars.ball_rng_max_p2:
+				code_data.ball_check = code_data.BALL_DIR.LEFTDOWN
+			pass,
+			
+		BallRandomHitRight = func() -> void:
+			var right_rng := RandomNumberGenerator.new()
+			var right_rng_num := right_rng.randi_range(code_data.player_vars.ball_rng_min_p1, code_data.player_vars.ball_rng_max_p1)
+			if right_rng_num == code_data.player_vars.ball_rng_min_p1:
+				code_data.ball_check = code_data.BALL_DIR.RIGHT
+			
+			if right_rng_num == code_data.player_vars.ball_rng_middle_p1:
+				code_data.ball_check = code_data.BALL_DIR.RIGHTMIDDLE
+			
+			if right_rng_num == code_data.player_vars.ball_rng_max_p1:
+				code_data.ball_check = code_data.BALL_DIR.RIGHTDOWN
+			pass,
+			
+		BallRandomHitDown = func() -> void:
+			var down_rng := RandomNumberGenerator.new()
+			var down_rng_num := down_rng.randi_range(code_data.player_vars.ball_rng_min_p1, code_data.player_vars.ball_rng_max_p1)
+			if down_rng_num == code_data.player_vars.ball_rng_min_p1:
+				code_data.ball_check = code_data.BALL_DIR.LEFTDOWN
+				
+			if down_rng_num == code_data.player_vars.ball_rng_middle_p1:
+				code_data.ball_check = code_data.BALL_DIR.DOWN
+			
+			if down_rng_num == code_data.player_vars.ball_rng_max_p1:
+				code_data.ball_check = code_data.BALL_DIR.RIGHTDOWN
+			pass,
+		
+		BallRandomHitUp = func() -> void:
+			var up_rng := RandomNumberGenerator.new()
+			var up_rng_num := up_rng.randi_range(code_data.player_vars.ball_rng_min_p1, code_data.player_vars.ball_rng_max_p1)
+			if up_rng_num == code_data.player_vars.ball_rng_min_p2:
+				code_data.ball_check = code_data.BALL_DIR.LEFT
+			
+			if up_rng_num == code_data.player_vars.ball_rng_middle_p2:
+				code_data.ball_check = code_data.BALL_DIR.UP
+				
+			if up_rng_num == code_data.player_vars.ball_rng_max_p2:
+				code_data.ball_check = code_data.BALL_DIR.RIGHT
+			pass,
+		
+		MoveUpperLeft = func(delta := get_physics_process_delta_time() ) -> void:
+			code_data.ball.position.x -= code_data.ball_speed_x * delta
+			code_data.ball.position.y -= code_data.ball_speed_y * delta
+			pass,
+
+		MoveMiddleLeft = func(delta := get_physics_process_delta_time() ) -> void:
+			code_data.ball.position.x -= code_data.ball_speed_x * delta
+			pass,
+
+		MoveLowerLeft = func(delta := get_physics_process_delta_time() ) -> void:
+			code_data.ball.position.x -= code_data.ball_speed_x * delta
+			code_data.ball.position.y += code_data.ball_speed_y * delta
+			pass,
+			
+		MoveUpperRight = func(delta := get_physics_process_delta_time() ) -> void:
+			code_data.ball.position.x += code_data.ball_speed_x * delta
+			code_data.ball.position.y -= code_data.ball_speed_y * delta
+			pass,
+			
+		MoveMiddleRight = func(delta := get_physics_process_delta_time() ) -> void:
+			code_data.ball.position.x += code_data.ball_speed_x * delta
+			pass,
+			
+		MoveLowerRight = func(delta := get_physics_process_delta_time() ) -> void:
+			code_data.ball.position.x += code_data.ball_speed_x * delta
+			code_data.ball.position.y += code_data.ball_speed_y * delta
+			pass,
+		MoveUp = func(delta := get_physics_process_delta_time() ) -> void:
+			code_data.ball.position.y += code_data.ball_speed_x * delta
+			pass,
+		
+		MoveDown = func(delta := get_physics_process_delta_time() ) -> void:
+			code_data.ball.position.y -= code_data.ball_speed_x * delta
+			pass,
+	},
+#endregion	
+}
+
+func _ready() -> void:
+	code_data.std.FunctionCall.call()
+"
+
+[node name="Borders" type="StaticBody2D" parent="." groups=["border"]]
+unique_name_in_owner = true
+
+[node name="YBorderBallUp" type="StaticBody2D" parent="Borders" groups=["borderUP"]]
+unique_name_in_owner = true
+position = Vector2(0, -30)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/YBorderBallUp"]
+position = Vector2(-1, -709)
+shape = SubResource("RectangleShape2D_bpcle")
+
+[node name="YBorderBallDown" type="StaticBody2D" parent="Borders" groups=["borderDOWN"]]
+unique_name_in_owner = true
+position = Vector2(0, 15)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/YBorderBallDown"]
+position = Vector2(-1.5, 729.5)
+shape = SubResource("RectangleShape2D_qf07u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
+position = Vector2(-0.25, 769)
+shape = SubResource("RectangleShape2D_5eqk3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders"]
+position = Vector2(-1.25, -767.25)
+shape = SubResource("RectangleShape2D_3mkn2")
