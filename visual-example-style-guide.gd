@@ -5,6 +5,10 @@
   floatVar = 2.40, # We Can't Use Static Typing Sadly.
   stringVar = "Hello World", # We Also Add Commas At The End Of Each Line Because Of How Dictionaries Work
   boolVar = true,
+
+  #wild stuff
+  nodeVar = %NodePath # if your accessing a Unique Node/Node Path, you'll have to add the @onready keyword in your main dictionary, otherwise, just leave it be.
+  preloadVar = preload("res://icon.svg") # also add an @onready notation if your doing preload/load (just to be sure!)
   
   #functions
   FuncCall = func() -> void:
@@ -22,6 +26,15 @@
 # a cool thing about this type of challenge is, we can sort of "mimic" a namespace with this, and add more namespaces/classes by putting another dictionary like below:
   ClassTest = {
     #variables here again
-    
+    vectorVar = Vector2(0, 20)
+    arrayVar = ["foo", "bar"]
+
+    #functions
+    printFooBar = func() -> void:
+      print(code_data.ClassTest.arrayVar[0] #this is how we access variables/functions inside another dictionary)
+      print(code_data.ClassTest.arrayVar[0]) 
   }
 }
+
+func _ready():
+  code_data.FuncCall.call() # call your FuncCall function inside ready, this is the only built in godot function we'll need.
